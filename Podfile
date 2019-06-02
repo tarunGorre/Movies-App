@@ -10,6 +10,8 @@ target 'Movies App' do
   target 'Movies AppTests' do
     inherit! :search_paths
     # Pods for testing
+  pod 'Kingfisher', '~> 4.0'
+
   end
 
 end
