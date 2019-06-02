@@ -47,13 +47,4 @@ class MovieDetailsViewControllerTests: XCTestCase {
         XCTAssertTrue(viewControllerUnderTest.conforms(to: UICollectionViewDataSource.self))
         
     }
-    
-    func testCollectionViewCellHasReuseIdentifier() {
-        let cell = viewControllerUnderTest.collectionView(viewControllerUnderTest.similarMoviesCollectionView, cellForItemAt: IndexPath(row: 0, section: 0)) as? SimilarMovieCollectionCell
-
-        let actualReuseIdentifer = cell?.reuseIdentifier
-        let expectedReuseIdentifier = "SimilarMovieCollectionCell"
-        XCTAssertEqual(actualReuseIdentifer, expectedReuseIdentifier)
-    }
-
 }

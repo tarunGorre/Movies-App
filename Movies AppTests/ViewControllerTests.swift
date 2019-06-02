@@ -12,12 +12,10 @@ import XCTest
 class ViewControllerTests: XCTestCase {
 
     var viewControllerUnderTest: ViewController!
-    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         self.viewControllerUnderTest = (storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController)
-        
         self.viewControllerUnderTest.loadView()
         self.viewControllerUnderTest.viewDidLoad()
     }
@@ -48,12 +46,4 @@ class ViewControllerTests: XCTestCase {
         XCTAssertTrue(viewControllerUnderTest.conforms(to: UICollectionViewDataSource.self))
         
     }
-    
-    func testCollectionViewCellHasReuseIdentifier() {
-        let cell = viewControllerUnderTest.collectionView(viewControllerUnderTest.collectionView, cellForItemAt: IndexPath(row: 0, section: 0)) as? CollectionCell
-        let actualReuseIdentifer = cell?.reuseIdentifier
-        let expectedReuseIdentifier = "CollectionCell"
-        XCTAssertEqual(actualReuseIdentifer, expectedReuseIdentifier)
-    }
-
 }
